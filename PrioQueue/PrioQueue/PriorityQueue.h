@@ -60,7 +60,13 @@ public:
    * add.
    */
   void insert_all(std::vector<std::pair<int,E> > new_elements) {
-
+	  for (int i = 0; i < new_elements.size(); i++) {
+		  if (new_elements.at(i).first >= 0){
+			  heapArray.push_back(new_elements.at(i)); 
+		  }
+	  }
+	  
+	  rebuild();
   }
 
   /*
