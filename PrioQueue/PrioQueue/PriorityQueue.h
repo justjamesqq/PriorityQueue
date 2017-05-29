@@ -48,6 +48,9 @@ public:
    * with priorioty "priority".
    */
   void insert(int priority, E element) {
+	  if (priority < 0) {
+		  return;
+	  }
 	  heapArray.push_back(std::pair<int, E>(priority, element)); //add the new element to the back of the array then rebuild it
 	  rebuild(); 
   }
@@ -75,8 +78,8 @@ public:
    * it in the queue.
    */
   E peek() {
-    
-    return E();
+	std::pair<int, E> lowestElement = heapArray.at(0); 
+    return lowestElement.second;
   }
 
   /*

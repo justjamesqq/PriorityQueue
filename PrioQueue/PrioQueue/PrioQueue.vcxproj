@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Assignment2Test.h" />
+    <ClInclude Include="PriorityQueue.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Assignment2Tests.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{F30CB5EA-3ADA-4A96-B0E5-4C28ED0D6CF3}</ProjectGuid>
@@ -139,13 +146,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Documents\assignment2\Assignment2Test.h" />
-    <ClInclude Include="..\..\..\..\..\Documents\assignment2\PriorityQueue.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Documents\assignment2\Assignment2Tests.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
