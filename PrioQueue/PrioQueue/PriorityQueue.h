@@ -102,6 +102,11 @@ public:
    * otherwise.
    */
   bool contains(E element){
+	  for (int i = 0; i < heapArray.size(); i++) {
+		  if (heapArray.at(i).second == element) {
+			  return true;
+		  }
+	  }
 
     return false;
 
