@@ -39,7 +39,7 @@ public:
    */
   PriorityQueue() {
 	  _size = 0;
-	  heapArray.clear(); 
+	  heapArray.clear();  
   }
 
 
@@ -51,7 +51,7 @@ public:
 	  if (priority < 0) {
 		  return;
 	  }
-	  heapArray.push_back(std::pair<int, E>(priority, element)); //add the new element to the back of the array then rebuild it
+	  heapArray.push_back(std::pair<int, E>(priority, element)); //add the new element to the back of the min-heap and rebuild it 
 	  rebuild(); 
   }
 
@@ -59,7 +59,7 @@ public:
    * Similar to insert, but takes a whole vector of new things to
    * add.
    */
-  void insert_all(std::vector<std::pair<int,E> > new_elements) {
+  void insert_all(std::vector<std::pair<int,E> > new_elements) {  //Just rebuilds everything in the vector into a min heap
 	  for (int i = 0; i < new_elements.size(); i++) {
 		  if (new_elements.at(i).first >= 0){
 			  heapArray.push_back(new_elements.at(i)); 
@@ -84,7 +84,7 @@ public:
    * it in the queue.
    */
   E peek() {
-	std::pair<int, E> lowestElement = heapArray.at(0); 
+	std::pair<int, E> lowestElement = heapArray.at(0);  
     return lowestElement.second;
   }
 
