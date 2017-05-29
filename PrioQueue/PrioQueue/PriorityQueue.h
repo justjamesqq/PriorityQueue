@@ -92,8 +92,11 @@ public:
    * Returns a vector containing all the elements in the queue.
    */
   std::vector<E> get_all_elements() {
-
-    return std::vector<E>();
+	  std::vector<E> allElements;
+	  for (int i = 0; i < heapArray.size(); i++) {
+		  allElements.push_back(heapArray.at(i).second); 
+	  }
+    return allElements;
     
   }
 
@@ -119,7 +122,11 @@ public:
    * If no element matches, return -1.
    */
   int get_priority(E element){
-
+	  for (int i = 0; i < heapArray.size(); i++) {
+		  if (heapArray.at(i).second == element) {
+			  return heapArray.at(i).first;
+		  }
+	  }
     return -1;
 
   }
