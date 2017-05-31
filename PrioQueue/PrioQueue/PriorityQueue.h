@@ -65,7 +65,7 @@ public:
 			  heapArray.push_back(new_elements.at(i)); 
 		  }
 	  }
-	  
+	 
 	  rebuild();
   }
 
@@ -74,8 +74,18 @@ public:
    * and returns it.
    */
   E remove_front() {
+	  if (empty() == true) {					//tests check what happens when the vector is emtpy 
+		  return E(); 
+	  }
+	  std::pair<int, E> lowest = heapArray.at(0);
+	heapArray.erase(heapArray.begin());			//remove the first element in the vector
+	if (_size != 1) {							//had to add this if check as I would get a DLL error regarding back() returning nothing
+		heapArray.insert(heapArray.begin(), heapArray.back());		//move all the elements down to fill up the new empty space
+		heapArray.pop_back();									//remove the end of the vector which is now empty
 
-    return E();
+		rebuild();												
+	}
+    return lowest.second;
 
   }
 
@@ -84,6 +94,7 @@ public:
    * it in the queue.
    */
   E peek() {
+
 	std::pair<int, E> lowestElement = heapArray.at(0);  
     return lowestElement.second;
   }
@@ -177,6 +188,7 @@ public:
     return heapArray.empty();
     
   }
+
   /*rebuilds the queue as a min-heap*/
   void rebuild() {
 	  _size = heapArray.size();
