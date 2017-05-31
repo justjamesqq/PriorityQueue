@@ -48,7 +48,7 @@ public:
    */
   void insert(int priority, E element) {
 	  if (priority < 0) {
-		  break;
+		  return;
 	  }
 	  heapArray.push_back(std::pair<int, E>(priority, element)); //add the new element to the back of the min-heap and rebuild it 
 	  rebuild(); 
@@ -165,7 +165,7 @@ public:
 	  for (int i = 0; i < heapArray.size(); i++) {
 		  if (heapArray.at(i).second == element) {
 			  heapArray.at(i).first = new_priority;
-			  break; 
+			  return; 
 		  }
 	  }
 	  rebuild(); 
