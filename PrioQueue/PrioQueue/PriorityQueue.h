@@ -139,8 +139,11 @@ public:
    * get_all_elements()[i] should be get_all_prriorities()[i].
    */
   std::vector<int> get_all_priorities(){
-
-    return std::vector<int>();
+	  std::vector<int> allPriorities;
+	  for (int i = 0; i < heapArray.size(); i++) {
+		  allPriorities.push_back(heapArray.at(i).first);
+	  }
+    return allPriorities;
 
   }
 
