@@ -152,7 +152,12 @@ public:
    * "element", and changes its priority to "new_priority".
    */
   void change_priority(E element, int new_priority) {
-
+	  for (int i = 0; i < heapArray.size(); i++) {
+		  if (heapArray.at(i).second == element) {
+			  heapArray.at(i).first = new_priority;
+		  }
+	  }
+	  rebuild(); 
   }
 
   /*
